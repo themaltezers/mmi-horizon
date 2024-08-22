@@ -7,6 +7,7 @@ body {
     background: $bg;
     color: $text-white;
     width: 100vw;
+    height: 10000vh;
     overflow-x: hidden;
 }
 
@@ -26,4 +27,17 @@ p {
 button {
     font-weight: 500;
     font-size: 16px;
+    width: fit-content;
+}
+
+a {
+    color: white;
+}
+
+.cta {
+    padding: 10px 20px;
+    border-radius: 32px;
+    &Cyber {
+        background: $c-blue-base;
+    }
 }

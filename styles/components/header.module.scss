@@ -7,9 +7,11 @@
 .header {
     padding: 1em 2em;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    justify-content: center;
-    position: sticky;
-    top: 10;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10px;
+    z-index: 1000;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(15px);
@@ -33,5 +35,6 @@
     gap: 60px;
     &Item a {
         color: white;
+        font-weight: 500;
     }
 }

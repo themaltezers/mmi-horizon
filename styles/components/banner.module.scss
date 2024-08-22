@@ -1,0 +1,33 @@
+@import "../vars.scss";
+
+.banner {
+    height: 100vh;
+    background: url("/img/bg/bg-banner-home.webp") center/cover,
+        rgba(0, 0, 0, 1);
+
+    &Text {
+        width: 85%;
+        margin: 0 auto;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 15em 5em;
+    }
+    &Title {
+        font-size: 3em;
+        font-weight: bold;
+    }
+    &Subtitle {
+        font-size: 1.3em;
+        // font-weight: 500;
+    }
+}
+
+.btn {
+    padding: 9px 20px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    color: $bg-card;
+}

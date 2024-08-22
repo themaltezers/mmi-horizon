@@ -1,0 +1,129 @@
+@import "../vars.scss";
+
+.main {
+    margin: 0 auto;
+}
+
+.pres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3em 0;
+    &Title {
+        font-size: 4em;
+        text-transform: uppercase;
+        font-size: bold;
+    }
+    &Div {
+        width: 80%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    &Text {
+        line-height: 1.3em;
+        font-size: 18px;
+    }
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bento {
+    width: 85vw;
+    display: grid;
+    gap: 1em;
+    &Top,
+    &Bottom {
+        display: grid;
+        gap: 1em;
+    }
+    &Top {
+        grid-template-columns: 70% 30%;
+    }
+    &Bottom {
+        grid-template-columns: 30% 70%;
+    }
+    &Cyber {
+        margin: 1em 0;
+        grid-template-columns: 40% 60%;
+    }
+    &Left {
+        height: 100%;
+    }
+    &Right {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        &Bottom {
+            display: flex;
+            gap: 1em;
+        }
+    }
+    &Card {
+        background: $bg-card;
+        border-radius: 24px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        &Title {
+            font-size: 18px;
+            line-height: 1.3em;
+        }
+        &Text {
+            font-size: 14px;
+        }
+    }
+}
+
+.product {
+    &Container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 85vw;
+        gap: 1em;
+    }
+    &BtnContainer {
+        display: flex;
+        gap: 1em;
+    }
+    &Card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 64px 56px 48px 56px;
+        background: $bg-card;
+        border-radius: 24px;
+    }
+    &Title {
+        font-size: $title-sub;
+    }
+    &Subtitle {
+        font-weight: 300;
+        font-size: 14px;
+    }
+    &Carac {
+        display: flex;
+        flex-direction: column;
+        // gap: 1em;
+        &Item {
+            display: flex;
+            gap: 0.5em;
+            padding: 1em;
+            align-items: center;
+
+            &Text {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+}
