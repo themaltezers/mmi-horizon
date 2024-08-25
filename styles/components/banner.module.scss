@@ -2,17 +2,19 @@
 
 .banner {
     height: 100vh;
-    background: url("/img/bg/bg-banner-home.webp") center/cover,
-        rgba(0, 0, 0, 1);
+    background: url("/img/bg/bg-banner-home.webp") center/cover;
 
     &Text {
-        width: 85%;
+        background: rgba(0, 0, 0, 0.1);
+        height: 100%;
         margin: 0 auto;
-        border: 1px solid red;
+        border: 1px solid;
         display: flex;
         flex-direction: column;
+        // align-items: center;
+        justify-content: center;
         gap: 1em;
-        padding: 15em 5em;
+        padding: 0 5em;
     }
     &Title {
         font-size: 3em;

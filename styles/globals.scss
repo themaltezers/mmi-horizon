@@ -7,7 +7,6 @@ body {
     background: $bg;
     color: $text-white;
     width: 100vw;
-    height: 10000vh;
     overflow-x: hidden;
 }
 
@@ -36,8 +35,20 @@ a {
 
 .cta {
     padding: 10px 20px;
-    border-radius: 32px;
+    border-radius: 0.5em;
     &Cyber {
         background: $c-blue-base;
+        &Invert {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid $c-blue-base;
+        }
     }
+}
+
+.circle {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: $c-blue-base;
 }

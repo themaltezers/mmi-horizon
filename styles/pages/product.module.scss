@@ -1,0 +1,120 @@
+@import "../vars.scss";
+.productPage {
+}
+
+.product {
+    &Banner {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background: rgb(54, 54, 238);
+        &Text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
+    }
+    &Title {
+        font-weight: 600;
+        font-size: 56px;
+    }
+}
+
+.productPres {
+    width: 85vw;
+
+    margin: 150px auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2em;
+    // height: 1000vh;
+    &Img {
+        padding: 2em;
+        background: $c-blue-base;
+        border-radius: 1.5em;
+        width: 500px;
+        height: 500px;
+        position: sticky;
+        top: 15%;
+    }
+    &Text,
+    &TextTop,
+    &List {
+        display: flex;
+        flex-direction: column;
+    }
+    &Text {
+        justify-content: space-around;
+        height: 500px;
+        padding: 32px 10px;
+        border: 1px solid green;
+        &Top {
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+        &Title {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        &Subtitle {
+            font-style: italic;
+            color: $c-blue-base;
+        }
+    }
+
+    &List {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        &Item {
+            display: flex;
+            align-items: center;
+            color: $c-blue-base;
+            gap: 0.5em;
+            line-height: 1.3em;
+        }
+    }
+}
+
+.btnContainer {
+    display: flex;
+    gap: 1em;
+}
+
+.productCarrousel {
+    display: flex;
+    height: 100%;
+    gap: 1em;
+    border: 1px solid green;
+    overflow-x: scroll;
+    &Item {
+        padding: 24px 32px;
+        background: $bg-card;
+        // height: 100%;
+        min-width: 200px;
+        border-radius: 24px;
+        &Title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        &Text {
+            font-weight: 600;
+        }
+    }
+}
+
+.rightPart {
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+}
+
+// .leftPart {
+//     border: 1px solid green;
+//     margin: 0 auto;
+// }
