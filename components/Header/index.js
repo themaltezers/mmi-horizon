@@ -5,19 +5,19 @@ import Link from "next/link";
 const Header = () => {
     return (
         <header className={styles.header}>
-            <div className={styles.logo}>
+            <Link href={"/"} className={styles.logo}>
                 <Image
-                    src={"/logo-mmi-w.svg"}
-                    width={30}
-                    height={30}
+                    src={"/new-logo.svg"}
+                    width={50}
+                    height={50}
                     alt="logo MMI Horizon"
                 />
                 <p className={styles.logoTitle}>MMI</p>
-            </div>
+            </Link>
             <nav className={styles.menuContainer}>
                 <ul className={styles.menu}>
                     <li className={styles.menuItem}>
-                        <Link href={"#"}>Web</Link>
+                        <Link href={"#web"}>Web</Link>
                     </li>
                     <li className={styles.menuItem}>
                         <Link href={"#"}>Cybersécurité</Link>

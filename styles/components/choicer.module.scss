@@ -1,0 +1,62 @@
+@import "../vars.scss";
+
+.choice {
+    margin-bottom: 64px;
+    &Selector {
+        font-style: 17px;
+    }
+}
+.quote {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+    &Colored {
+        color: $c-blue-base;
+        font-weight: 500;
+    }
+}
+
+.choiceContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: $bg-card;
+    border-radius: 12px;
+    margin-bottom: 1em;
+    transition: all 0.4s;
+    &:hover {
+        background: $c-blue-base;
+    }
+}
+
+.input {
+    &Container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 44px;
+    }
+    &Lab {
+        display: grid;
+        grid-template-columns: 20% 70%;
+        align-items: center;
+        // gap: 1em;
+    }
+}
+
+.submitButton {
+    border: 1px solid $c-blue-base;
+    border-radius: 24px;
+    background: $bg-card;
+    padding: 10px 20px;
+    color: white;
+    transition: all 0.7s;
+    cursor: pointer;
+    &:hover {
+        background: $c-blue-base;
+    }
+}
+
+.input {
+    padding: 8px;
+}

@@ -10,20 +10,20 @@
     justify-content: center;
     flex-direction: column;
     margin: 3em 0;
+    height: 100vh;
     &Title {
         font-size: 4em;
         text-transform: uppercase;
         font-size: bold;
     }
     &Div {
-        width: 80%;
+        width: 70vw;
         padding: 2em;
         display: flex;
         flex-direction: column;
         gap: 2em;
     }
     &Text {
-        line-height: 1.3em;
-        // font-size: 18px;
+        line-height: 1.5em;
     }
 }

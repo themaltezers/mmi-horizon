@@ -52,3 +52,16 @@ a {
     border-radius: 100%;
     background: $c-blue-base;
 }
+
+.btnContainer {
+    display: flex;
+    gap: 1em;
+}
+
+.dot {
+    width: 1.3vw;
+    height: 1.3vw;
+    border-radius: 50%;
+    background: $bg-card;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}

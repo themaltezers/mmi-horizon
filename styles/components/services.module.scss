@@ -6,6 +6,7 @@
     justify-content: center;
     gap: 2em;
     margin: 2em;
+    min-height: 100vh;
     &Title {
         font-size: 56px;
         text-transform: uppercase;
@@ -14,7 +15,7 @@
 }
 
 .bento {
-    width: 85vw;
+    width: 70vw;
     display: grid;
     gap: 1em;
     &Top,
@@ -66,7 +67,7 @@
     &Container {
         display: grid;
         grid-template-columns: 50% 50%;
-        width: 85vw;
+        width: 70vw;
         gap: 1em;
     }
     &BtnContainer {
@@ -92,6 +93,7 @@
     &Carac {
         display: flex;
         flex-direction: column;
+        margin-bottom: 2em;
         // gap: 1em;
         &Item {
             display: flex;
@@ -100,8 +102,8 @@
             align-items: center;
 
             &Text {
-                // font-size: 14px;
-                font-weight: 500;
+                font-size: 14px;
+                // font-weight: 500;
             }
         }
     }

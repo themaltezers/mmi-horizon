@@ -10,7 +10,7 @@ export default function Home() {
         <main className={styles.main}>
             <Banner></Banner>
             <section className={styles.pres}>
-                <h2 className={styles.presTitle}>Nous</h2>
+                {/* <h2 className={styles.presTitle}>Nous</h2> */}
                 <div className={styles.presDiv}>
                     <p className={styles.presText}>
                         Chez MMI Horizon, nous transformons la technologie en un

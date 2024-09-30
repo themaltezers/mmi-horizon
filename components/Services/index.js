@@ -9,7 +9,7 @@ const Services = () => {
 
     return (
         <section>
-            <section className={styles.service}>
+            <section id="web" className={styles.service}>
                 <h2 className={styles.serviceTitle}>Web</h2>
                 <div className={styles.bento}>
                     <div className={styles.bentoTop}>
@@ -74,13 +74,13 @@ const Services = () => {
                                 {p.productSubtitle}
                             </p>
                             <Image
-                                src={p.productImg}
+                                src={p.productImg[0]}
                                 width={300}
                                 height={300}
                                 alt="Picture of the author"
                             />
                             <ul className={styles.productCarac}>
-                                {p.productCarac.map((pCarac) => (
+                                {p.productCarac.slice(0, 3).map((pCarac) => (
                                     <li
                                         key={pCarac.id}
                                         className={styles.productCaracItem}
@@ -103,10 +103,9 @@ const Services = () => {
                                 ))}
                             </ul>
                             <div className={styles.productBtnContainer}>
-                                <Link className={"cta ctaCyber"} href={"#"}>
-                                    En savoir plus
+                                <Link className={"cta ctaCyber"} href={p.slug}>
+                                    Configurer
                                 </Link>
-                                <div className={"cta"}>Devis</div>
                             </div>
                         </div>
                     ))}
