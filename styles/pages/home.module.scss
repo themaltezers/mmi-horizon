@@ -1,0 +1,29 @@
+@import "../vars.scss";
+
+.main {
+    margin: 0 auto;
+}
+
+.pres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3em 0;
+    height: 100vh;
+    &Title {
+        font-size: 4em;
+        text-transform: uppercase;
+        font-size: bold;
+    }
+    &Div {
+        width: 70vw;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    &Text {
+        line-height: 1.5em;
+    }
+}

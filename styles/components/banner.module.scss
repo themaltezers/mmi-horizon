@@ -1,0 +1,37 @@
+@import "../vars.scss";
+
+.banner {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        /* Overlay noir transparent */ url("/img/bg/bg-banner-home.webp")
+            center/cover;
+    width: 100vw;
+
+    display: grid;
+    grid-template-rows: 80% 20%;
+    justify-content: center;
+    align-items: center;
+    &Text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    &Title {
+        font-size: 3em;
+        line-height: 1.2em;
+        font-weight: bold;
+    }
+    &Subtitle {
+        font-size: 1.3em;
+        // font-weight: 500;
+    }
+}
+
+.goto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}

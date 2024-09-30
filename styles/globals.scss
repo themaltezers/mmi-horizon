@@ -1,0 +1,67 @@
+@import "./reset.scss";
+@import "./vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+body {
+    font-family: "Inter", sans-serif;
+    background: $bg;
+    color: $text-white;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 600;
+}
+h2,
+h3 {
+    font-weight: 500;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+button {
+    font-weight: 500;
+    font-size: 16px;
+    width: fit-content;
+}
+
+a {
+    color: white;
+}
+
+.cta {
+    padding: 10px 20px;
+    border-radius: 0.5em;
+    &Cyber {
+        background: $c-blue-base;
+        &Invert {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid $c-blue-base;
+        }
+    }
+}
+
+.circle {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: $c-blue-base;
+}
+
+.btnContainer {
+    display: flex;
+    gap: 1em;
+}
+
+.dot {
+    width: 1.3vw;
+    height: 1.3vw;
+    border-radius: 50%;
+    background: $bg-card;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
