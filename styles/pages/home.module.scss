@@ -4,26 +4,29 @@
     margin: 0 auto;
 }
 
-.pres {
+.interlude {
+    width: 70vw;
+    margin: 0 auto;
+    height: 50vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin: 3em 0;
-    height: 100vh;
-    &Title {
-        font-size: 4em;
-        text-transform: uppercase;
-        font-size: bold;
-    }
-    &Div {
-        width: 70vw;
+}
+
+.pres {
+    width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    &Card {
+        background: $bg-card;
         padding: 2em;
+        border-radius: 1.5em;
         display: flex;
         flex-direction: column;
-        gap: 2em;
-    }
-    &Text {
-        line-height: 1.5em;
+        gap: 1em;
+        &Title {
+            font-weight: 500;
+        }
     }
 }

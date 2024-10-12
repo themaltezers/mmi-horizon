@@ -17,10 +17,10 @@ const Header = () => {
             <nav className={styles.menuContainer}>
                 <ul className={styles.menu}>
                     <li className={styles.menuItem}>
-                        <Link href={"#web"}>Web</Link>
+                        <Link href={"#web"}>Solutions</Link>
                     </li>
                     <li className={styles.menuItem}>
-                        <Link href={"#"}>Cybersécurité</Link>
+                        <Link href={"#"}>Services</Link>
                     </li>
                     <li className={styles.menuItem}>
                         <Link href={"#"}>Contact</Link>

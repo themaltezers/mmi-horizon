@@ -1,16 +1,21 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/pages/home.module.scss";
 
 import Banner from "@/components/Banner";
 import Services from "@/components/Services";
+import Carousel from "@/components/Carousel";
+import presCardStore from "@/stores/presCardStore";
 
 export default function Home() {
+    const cards = presCardStore((state) => state.cards);
     return (
         <main className={styles.main}>
-            <Banner></Banner>
-            <section className={styles.pres}>
-                {/* <h2 className={styles.presTitle}>Nous</h2> */}
+            {/* <Banner></Banner> */}
+            <Carousel></Carousel>
+            {/* <section className={styles.pres}>
+               
                 <div className={styles.presDiv}>
                     <p className={styles.presText}>
                         Chez MMI Horizon, nous transformons la technologie en un
@@ -54,8 +59,40 @@ export default function Home() {
                         l'innovation un levier pour votre croissance.
                     </p>
                 </div>
+            </section>  */}
+            <section className={styles.interlude}>
+                <h2>
+                    Optimisez vos infrastructures avec des solutions
+                    personnalisées
+                </h2>
+                <p>
+                    Chez MMI Horizon, nous combinons expertise technique et
+                    conseil stratégique pour vous accompagner à chaque étape.
+                    Nos solutions sur-mesure renforcent votre sécurité,
+                    simplifient la gestion de vos systèmes et soutiennent la
+                    croissance de votre entreprise.
+                </p>
+                <Link href={"#"} className="cta ctaCyber">
+                    Test
+                </Link>
             </section>
-            <Services></Services>
+            <section>
+                <p>Découvrez nos services</p>
+                <ul className={styles.pres}>
+                    {cards.map((card) => (
+                        <li key={card.id} className={styles.presCard}>
+                            <div className={styles.presCardIcon}></div>
+                            <h3 className={styles.presCardTitle}>
+                                {card.title}
+                            </h3>
+                            <p className={styles.presCardText}>{card.text}</p>
+                            <Link href={"#"} className="cta ctaCyber">
+                                {card.cta}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </section>
         </main>
     );
 }

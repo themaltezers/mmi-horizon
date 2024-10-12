@@ -163,4 +163,29 @@ const bentosStore = create((set) => ({
     products,
 }));
 
+const presText = [
+    {
+        id: 0,
+        title: "Pare-feux",
+        text: "Protégez votre réseau contre les cybermenaces avec nos                        solutions de pare-feux. Sécurisez vos données et                        garantissez la continuité de vos opérations grâce à une                        protection proactive et une gestion simplifiée.",
+
+        icon: "/img/product/HorizGuardBasic/HorizGuard-Basic1.webp",
+
+        slug: "/solutions",
+    },
+    {
+        id: 2,
+        title: "Web",
+        text: "Boostez votre présence en ligne avec nos services de création de sites web et de stratégies marketing digital. Attirez plus de clients et développez votre image grâce à des solutions personnalisées et performantes.",
+
+        icon: "/img/product/HorizGuardBasic/HorizGuard-Basic1.webp",
+
+        slug: "/solutions",
+    },
+];
+
+const presStore = create((set) => ({
+    presText,
+}));
+
 export default servicesStore;

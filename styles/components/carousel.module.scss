@@ -1,0 +1,29 @@
+@import "../vars.scss";
+
+.carousel {
+    width: 90vw;
+    // background: red;
+    height: 60vh;
+
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    align-items: center;
+
+    &Controls {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.slide {
+    height: 100%;
+    display: grid;
+    background: red;
+    align-items: end;
+    &Content {
+        padding: 2em 8vw;
+    }
+}
