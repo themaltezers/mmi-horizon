@@ -73,20 +73,22 @@ export default function Home() {
                     croissance de votre entreprise.
                 </p>
                 <Link href={"#"} className="cta ctaCyber">
-                    Test
+                    Découvrez nos services
                 </Link>
             </section>
             <section>
-                <p>Découvrez nos services</p>
+                {/* <p>Découvrez nos services</p> */}
                 <ul className={styles.pres}>
                     {cards.map((card) => (
                         <li key={card.id} className={styles.presCard}>
-                            <div className={styles.presCardIcon}></div>
+                            <div className={styles.presCardIcon}>
+                                <Image src={card.icon} width={50} height={50} />
+                            </div>
                             <h3 className={styles.presCardTitle}>
                                 {card.title}
                             </h3>
                             <p className={styles.presCardText}>{card.text}</p>
-                            <Link href={"#"} className="cta ctaCyber">
+                            <Link href={"#"} className={`cta ${card.ctaStyle}`}>
                                 {card.cta}
                             </Link>
                         </li>

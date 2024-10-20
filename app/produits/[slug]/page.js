@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import servicesStore from "@/stores";
+import Banner from "@/components/Banner";
+import Carousel from "@/components/Carousel";
 
 const Product = ({ params }) => {
     const { slug } = params;
@@ -22,33 +24,14 @@ const Product = ({ params }) => {
         notFound(); // Déclenche une page 404
     }
 
-    const [image, setImage] = useState(0);
-
     return (
         <main className={styles.productPage}>
-            <section className={styles.productBanner}>
-                <div className={styles.productBannerText}>
-                    <h1 className={styles.productTitle}>
-                        {product.productTitle}
-                    </h1>
-                    <p className={styles.productSubtitle}>
-                        {product.productSubtitle}
-                    </p>
-                </div>
+            <Banner product={product}></Banner>
 
-                <div className={"btnContainer"}>
-                    <Link href={"#"} className="cta ctaCyberInvert">
-                        Découvrir
-                    </Link>
-                    <Link href={"#"} className="cta ctaCyber">
-                        Configurer
-                    </Link>
-                </div>
-            </section>
             <section className={styles.product}>
                 <div className={styles.productTop}>
                     <Image
-                        src={product.productImg[0]}
+                        src={product.images[0]}
                         width={450}
                         height={450}
                         alt="Picture of the author"
@@ -56,34 +39,30 @@ const Product = ({ params }) => {
                     <div className={styles.productPresText}>
                         <div className={styles.productPresTextTop}>
                             <h2 className={styles.productPresTextTitle}>
-                                {product.productTitle}
+                                {product.title}
                             </h2>
                             <p className={styles.productPresTextSubtitle}>
-                                {product.productSubtitle2}
+                                {product.subtitle2}
                             </p>
                         </div>
-                        <p className={styles.productPresDesc}>
-                            Le HorizGuard Basic est la solution idéale pour les
-                            petites entreprises et les particuliers souhaitant
-                            sécuriser leur réseau sans compromis. <br /> Conçu
-                            pour être performant et simple à gérer, il offre une
-                            protection robuste contre les menaces en ligne, tout
-                            en restant abordable et facile à utiliser.
+                        <p
+                            className={styles.productPresDesc}
+                            dangerouslySetInnerHTML={{
+                                __html: product.description,
+                            }}
+                        >
+                            {/* {product.description} */}
                         </p>
                         <ul className={styles.productPresList}>
-                            <li className={styles.productPresListItem}>
-                                <span className="circle circleCyber"></span>
-                                Protection 24h/7j contre les menaces en ligne
-                            </li>
-                            <li className={styles.productPresListItem}>
-                                <span className="circle circleCyber"></span>
-                                Installation et configuration simplifiées
-                            </li>
-                            <li className={styles.productPresListItem}>
-                                <span className="circle circleCyber"></span>
-                                Performances optimisées avec un processeur Intel
-                                de dernière génération
-                            </li>
+                            {product.listItem.map((list) => (
+                                <li
+                                    key={list.id}
+                                    className={styles.productPresListItem}
+                                >
+                                    <span className="circle circleCyber"></span>
+                                    {list.content}
+                                </li>
+                            ))}
                         </ul>
                         <div className={"btnContainer"}>
                             <Link className="cta ctaCyber" href={"#"}>
@@ -98,59 +77,44 @@ const Product = ({ params }) => {
                 <div className={styles.productMid}>
                     <div className={styles.productMidText}>
                         <h2 className={styles.midTextTitle}>
-                            Pourquoi choisir l'HorizGuard Basic ?{" "}
+                            Pourquoi choisir l'{product.title} ?{" "}
                         </h2>
-                        <p className={styles.midTextContent}>
-                            Le HorizGuard Basic ne se contente pas de protéger
-                            votre réseau, il le transforme en une forteresse
-                            numérique, tout en restant accessible et pratique.
-                        </p>
+                        <p
+                            className={styles.midTextContent}
+                            dangerouslySetInnerHTML={{
+                                __html: product.answer,
+                            }}
+                        ></p>
                     </div>
                     <ul className={styles.productPros}>
-                        <li className={styles.productProsCard}>
-                            <p className={styles.productProsCardTitle}>
-                                Sécurité Inégalée
-                            </p>
-                            <p className={styles.productProsCardText}>
-                                Protégez vos données sensibles efficacement.{" "}
-                                <br></br>
-                                Repousse les cybermenaces les plus avancées.
-                            </p>
-                        </li>
-                        <li className={styles.productProsCard}>
-                            <p className={styles.productProsCardTitle}>
-                                Facilité de Configuration
-                            </p>
-                            <p className={styles.productProsCardText}>
-                                Configurez et gérez facilement. <br></br>
-                                Interface intuitive et rapide.
-                            </p>
-                        </li>
-                        <li className={styles.productProsCard}>
-                            <p className={styles.productProsCardTitle}>
-                                Performances Optimales
-                            </p>
-                            <p className={styles.productProsCardText}>
-                                Performance réseau sans compromis.<br></br>{" "}
-                                Efficacité maximale garantie.
-                            </p>
-                        </li>
-                        <li className={styles.productProsCard}>
-                            <p className={styles.productProsCardTitle}>
-                                Système d'Exploitation pfSense
-                            </p>
-                            <p className={styles.productProsCardText}>
-                                Basé sur pfSense reconnu mondialement.<br></br>{" "}
-                                Fiable, flexible et sécurisé.
-                            </p>
-                        </li>
+                        {product.cards.map((card) => (
+                            <li
+                                key={card.id}
+                                className={styles.productProsCard}
+                            >
+                                <Image
+                                    className={styles.productProsIcon}
+                                    src={card.icon}
+                                    width={50}
+                                    height={50}
+                                    alt="e"
+                                />
+                                <p className={styles.productProsCardTitle}>
+                                    {card.title}
+                                </p>
+                                <p className={styles.productProsCardText}>
+                                    {card.content[0]} <br></br>
+                                    {card.content[1]}
+                                </p>
+                            </li>
+                        ))}
                     </ul>
                     <div className={styles.productCarac}>
                         <h2 className={styles.productCaracTitle}>
                             Caractéristiques Techniques
                         </h2>
                         <ul className={styles.productCaracList}>
-                            {product.productCarac.map((p) => (
+                            {product.caracs.map((p) => (
                                 <li
                                     className={styles.productCaracListItem}
                                     key={p.id}
@@ -168,15 +132,15 @@ const Product = ({ params }) => {
             <section className={styles.productConfig}>
                 <div className={styles.productConfigText}>
                     <h2 className={styles.productConfigTitle}>
-                        {product.productTitle}
+                        {product.title}
                     </h2>
-                    <p>A partir de ...</p>
+                    <p>Je fais mon devis</p>
                 </div>
                 <div className={styles.productChoicer}>
-                    <div className={styles.productChoicerCarousel}>
+                    {/* <div className={styles.productChoicerCarousel}>
                         <div className={styles.productCarousel}>
                             <Image
-                                src={product.productImg[image]}
+                                src={product.images[image]}
                                 width={300}
                                 height={300}
                                 alt="test"
@@ -201,8 +165,9 @@ const Product = ({ params }) => {
                                 }
                             ></div>
                         </div>
-                    </div>
-                    <Choicer></Choicer>
+                    </div> */}
+                    <Carousel isProduct={true} product={product}></Carousel>
+                    <Choicer productName={product.title}></Choicer>
                 </div>
             </section>
         </main>

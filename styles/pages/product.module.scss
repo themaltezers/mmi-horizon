@@ -1,42 +1,23 @@
 @import "../vars.scss";
 
 .product {
-    &Banner {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        background: rgb(54, 54, 238);
-        &Text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1em;
-        }
-    }
-    &Title {
-        font-weight: 600;
-        font-size: 56px;
-    }
-}
-
-.product {
     width: 70vw;
-    margin: 0 auto;
-    border: 1px solid green;
+    margin: 5vh auto;
+
     &Top {
         display: grid;
         grid-template-columns: 50% 50%;
         align-items: center;
         justify-content: center;
+        margin: 2em 0;
     }
     &Mid {
         display: flex;
         flex-direction: column;
         gap: 1em;
+
         &Text {
+            margin: 4em 0;
             display: flex;
             flex-direction: column;
             gap: 1em;
@@ -59,6 +40,7 @@
     &Choicer {
         display: grid;
         grid-template-columns: 65% 35%;
+        gap: 1em;
         &Carousel {
             width: 95%;
             height: 30vw;
@@ -89,7 +71,7 @@
         }
         &Subtitle {
             font-style: italic;
-            color: $c-blue-base;
+            color: $c-text-acc;
         }
     }
     &List {
@@ -119,6 +101,7 @@
         padding: 36px 32px;
         height: 200px;
         // width: 30vw;
+        transition: all 0.5s;
         &Title {
             font-size: 16px;
             font-weight: 500;
@@ -127,6 +110,12 @@
             font-size: 18px;
             font-weight: 500;
         }
+        &:hover {
+            background: $c-blue-hover;
+        }
+    }
+    &Icon {
+        margin-bottom: 8px;
     }
 }
 
@@ -148,14 +137,4 @@
         font-size: 1.5em;
         font-weight: 500;
     }
-}
-
-.productCarousel {
-    display: flex;
-
-    justify-content: center;
-    background: $bg-card;
-    border-radius: 24px;
-    width: 100%;
-    margin-bottom: 1em;
 }

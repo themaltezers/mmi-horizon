@@ -1,16 +1,59 @@
+// /*------- GENERAL COLORS ----------*/
+// $bg: #161925;
+// $bg-card: #1c1f2e;
+// $text-white: #ffffff;
+// $text-grey: #727272;
+// $text-darkgrey: #444444;
+// $btn-bg: #252a41;
+
+// /*------- THEMES COLORS ----------*/
+// $w-purple-base: #830ef9;
+// $n-yellow-base: #f9a90e;
+// $c-blue-base: #0e78f9;
+// $e-orange-base: #ff742e;
+
+// /*----------- FS -------------*/
+// $text: 16px;
+// $title-sub: 1.5em;
+
+// $title-section: 58px;
+
 /*------- GENERAL COLORS ----------*/
-$bg: #161925;
-$bg-card: #1c1f2e;
-$text-white: #ffffff;
-$text-grey: #727272;
+$bg: #121212;
+$bg-card: #1e1e1e;
+$text-white: #e0e0e0;
+$text-grey: #a1a1a6;
 $text-darkgrey: #444444;
 $btn-bg: #252a41;
 
 /*------- THEMES COLORS ----------*/
-$w-purple-base: #830ef9;
+
+/*------- purples ----------*/
+$p-text-acc: #b19cd9;
+$p-text-hover: #9b6fc3;
+
+$w-purple-base: #8a2be2;
+$w-purple-hover: #7b1ebe;
+$w-purple-active: #5e178b;
+
+/*------- yellows ----------*/
 $n-yellow-base: #f9a90e;
-$c-blue-base: #0e78f9;
-$e-orange-base: #ff742e;
+
+/*------- blues ----------*/
+$c-text-acc: #5dafff;
+$c-text-hover: #1a7bcc;
+
+$c-blue-base: #1e90ff;
+$c-blue-hover: #1a7bcc;
+$c-blue-active: #145ca6;
+
+/*------- oranges ----------*/
+$c-text-acc: #5dafff;
+$c-text-hover: #1a7bcc;
+
+$e-orange-base: #ff8c00;
+$e-orange-hover: #e57a00;
+$e-orange-active: #b26000;
 
 /*----------- FS -------------*/
 $text: 16px;
