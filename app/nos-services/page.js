@@ -106,14 +106,18 @@ const nosServices = () => {
                 <h1 className={styles.bannerTitle}>Nos services</h1>
                 <p className={styles.bannerText}>
                     Découvrez nos{" "}
-                    <strong className="important">services sur mesure</strong>{" "}
+                    <strong className="important"> services sur mesure </strong>
                     conçus pour propulser votre entreprise dans l'univers
                     numérique. De la création de
                     <strong className="important">
-                        sites web performants
-                    </strong>{" "}
-                    à la{" "}
-                    <strong className="important">cybersécurité avancée</strong>
+                        {" "}
+                        sites web performantes{" "}
+                    </strong>
+                    à la
+                    <strong className="important">
+                        {" "}
+                        cybersécurité avancée{" "}
+                    </strong>
                     , en passant par une
                     <strong className="important">
                         {" "}
@@ -121,14 +125,16 @@ const nosServices = () => {
                     </strong>
                     , nous vous aidons à
                     <strong className="important">
-                        booster votre présence en ligne
-                    </strong>{" "}
+                        {" "}
+                        booster votre présence en ligne{" "}
+                    </strong>
                     tout en garantissant la
                     <strong className="important">
-                        sécurité de vos systèmes
+                        {" "}
+                        sécurité de vos systèmes{" "}
                     </strong>
                     . Faites le choix d'une expertise qui vous accompagne à
-                    chaque étape de votre croissance.{" "}
+                    chaque étape de votre croissance.
                 </p>
             </section>
             <section id="web" className={styles.service}>
@@ -164,7 +170,7 @@ const nosServices = () => {
                             />
                             <h3
                                 className={styles.bentoCardTitle}
-                                onClick={() => handleCardClick("IDesign")}
+                                onClick={() => handleCardClick("Design")}
                             >
                                 Design & Contenu
                             </h3>
