@@ -21,7 +21,7 @@ const Solution = () => {
             </section>
             <section className={styles.solutionPresentation}>
                 <h2 className={styles.solutionPresentationTitle}>
-                    pfSense Plus® : la solution open-ource de référence pour
+                    pfSense Plus® : la solution open-source de référence pour
                     sécuriser vos réseaux et cloud
                 </h2>
                 <p className={styles.solutionPresentationText}>
