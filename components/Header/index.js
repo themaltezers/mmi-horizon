@@ -21,7 +21,10 @@ const Header = () => {
                             <Link href={"#web"}>Solutions</Link>
                         </li>
                         <li className={styles.menuItem}>
-                            <Link href={"#"}>Services</Link>
+                            <Link href={"/nos-services"}>Services</Link>
+                        </li>
+                        <li className={styles.menuItem}>
+                            <Link href={"/a-propos"}>A propos</Link>
                         </li>
                         <li className={styles.menuItem}>
                             <Link href={"#"}>Contact</Link>

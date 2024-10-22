@@ -7,15 +7,40 @@ const products = [
         title: "HorizGuard Basic",
         subtitle: " La sécurité essentielle pour votre réseau",
         subtitle2: "Un Pare-feu Conçu pour l’Essentiel",
-        description: `    Le <span class="textAcc textAccCyber">Horizguard Basic</span> est la solution idéale pour les petites entreprises et les particuliers souhaitant <span class="textAcc textAccCyber">sécuriser leur réseau</span> sans compromis. Conçu pour être performant et <span class="textAcc textAccCyber">simple à gérer</span>, il offre une <span class="textAcc textAccCyber">protection robuste</span> contre les <span class="textAcc textAccCyber">menaces en ligne</span>, tout en restant <span class="textAcc textAccCyber">abordable</span> et <span class="textAcc textAccCyber">facile à utiliser</span>.`,
+        description: `    Le <strong class="textAcc textAccCyber">Horizguard Basic</strong> est la solution idéale pour les petites entreprises et les particuliers souhaitant <strong class="textAcc textAccCyber">sécuriser leur réseau</strong> sans compromis. Conçu pour être performant et <strong class="textAcc textAccCyber">simple à gérer</strong>, il offre une <strong class="textAcc textAccCyber">protection robuste</strong> contre les <strong class="textAcc textAccCyber">menaces en ligne</strong>, tout en restant <strong class="textAcc textAccCyber">abordable</strong> et <strong class="textAcc textAccCyber">facile à utiliser</strong>.`,
 
         images: [
-            "/img/product/HorizGuardBasic/HorizGuard-Basic1.webp",
-            "/img/product/HorizGuardBasic/HorizGuard-Basic2.webp",
-            "/img/product/HorizGuardBasic/HorizGuard-Basic3.webp",
-            "/img/product/HorizGuardBasic/HorizGuard-Basic4.webp",
-            "/img/product/HorizGuardBasic/HorizGuard-Basic5.webp",
-            "/img/product/HorizGuardBasic/HorizGuard-Basic6.webp",
+            {
+                id: 0,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic1.webp",
+
+                alt: "Vue avant du produit Horizguard Basic montrant son design compact et élégant",
+            },
+            {
+                id: 1,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic2.webp",
+                alt: "Vue avant du produit Horizguard Basic montrant son design compact et élégant",
+            },
+            {
+                id: 2,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic3.webp",
+                alt: `Gros plan sur les ports de connexion de l'Horizguard Basic, mettant en avant sa connectivité`,
+            },
+            {
+                id: 3,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic4.webp",
+                alt: `Câblage connecté à l'arrière de l'Horizguard Basic, illustrant sa facilité d'installation.`,
+            },
+            {
+                id: 4,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic5.webp",
+                alt: "Vue avant du produit Horizguard Basic montrant son design compact et élégant",
+            },
+            {
+                id: 5,
+                src: "/img/product/HorizGuardBasic/HorizGuard-Basic6.webp",
+                alt: "Vue avant du produit Horizguard Basic montrant son design compact et élégant",
+            },
         ],
 
         listItem: [
@@ -33,7 +58,7 @@ const products = [
                     "Performances optimisées avec un processeur Intel de dernière génération",
             },
         ],
-        answer: `    Le <span class="textAcc textAccCyber">Horizguard Basic</span> est la solution parfaite pour les <span class="textAcc textAccCyber">petites entreprises</span> et les <span class="textAcc textAccCyber">particuliers</span> qui recherchent une <span class="textAcc textAccCyber">protection fiable et accessible</span> pour leur réseau. Conçu pour <span class="textAcc textAccCyber">simplifier la gestion de la sécurité</span>, il vous permet de transformer votre réseau en une <span class="textAcc textAccCyber">forteresse numérique</span> sans avoir besoin de connaissances techniques avancées. Avec une <span class="textAcc textAccCyber">interface intuitive</span> et une <span class="textAcc textAccCyber">installation facile</span>, l'Horizguard Basic vous garantit une <span class="textAcc textAccCyber">protection 24h/24, 7j/7</span> contre les <span class="textAcc textAccCyber">cybermenaces</span>, tout en maintenant des <span class="textAcc textAccCyber">performances optimales</span> pour vos appareils connectés. Son <span class="textAcc textAccCyber">coût abordable</span> en fait un choix idéal pour ceux qui souhaitent <span class="textAcc textAccCyber">sécuriser leur réseau</span> sans compromis sur la qualité ou la performance.`,
+        answer: `    Le <strong class="textAcc textAccCyber">Horizguard Basic</strong> est la solution parfaite pour les <strong class="textAcc textAccCyber">petites entreprises</strong> et les <strong class="textAcc textAccCyber">particuliers</strong> qui recherchent une <strong class="textAcc textAccCyber">protection fiable et accessible</strong> pour leur réseau. Conçu pour <strong class="textAcc textAccCyber">simplifier la gestion de la sécurité</strong>, il vous permet de transformer votre réseau en une <strong class="textAcc textAccCyber">forteresse numérique</strong> sans avoir besoin de connaissances techniques avancées. Avec une <strong class="textAcc textAccCyber">interface intuitive</strong> et une <strong class="textAcc textAccCyber">installation facile</strong>, l'Horizguard Basic vous garantit une <strong class="textAcc textAccCyber">protection 24h/24, 7j/7</strong> contre les <strong class="textAcc textAccCyber">cybermenaces</strong>, tout en maintenant des <strong class="textAcc textAccCyber">performances optimales</strong> pour vos appareils connectés. Son <strong class="textAcc textAccCyber">coût abordable</strong> en fait un choix idéal pour ceux qui souhaitent <strong class="textAcc textAccCyber">sécuriser leur réseau</strong> sans compromis sur la qualité ou la performance.`,
         cards: [
             {
                 id: 0,
@@ -144,9 +169,16 @@ const products = [
         subtitle2:
             "La solution ultime pour une sécurité renforcée et une flexibilité inégalée.",
 
-        description: `Conçu avec des matériaux de <span class="textAcc textAccCyber">haute qualité</span>, cet équipement offre une <span class="textAcc textAccCyber">protection avancée</span> contre les <span class="textAcc textAccCyber">cybermenaces</span>, les éléments et les impacts. Grâce à ses <span class="textAcc textAccCyber">performances optimisées</span>, l'Horizguard Premium est idéal pour ceux qui souhaitent <span class="textAcc textAccCyber">sauvegarder efficacement</span> leurs <span class="textAcc textAccCyber">données sensibles</span> tout en garantissant une <span class="textAcc textAccCyber">adaptabilité</span> à divers environnements.`,
+        description: `Conçu avec des matériaux de <strong class="textAcc textAccCyber">haute qualité</strong>, cet équipement offre une <strong class="textAcc textAccCyber">protection avancée</strong> contre les <strong class="textAcc textAccCyber">cybermenaces</strong>, les éléments et les impacts. Grâce à ses <strong class="textAcc textAccCyber">performances optimisées</strong>, l'Horizguard Premium est idéal pour ceux qui souhaitent <strong class="textAcc textAccCyber">sauvegarder efficacement</strong> leurs <strong class="textAcc textAccCyber">données sensibles</strong> tout en garantissant une <strong class="textAcc textAccCyber">adaptabilité</strong> à divers environnements.`,
 
-        images: ["/img/product/HorizGuardPremium/HorizGuard-Premium1.png"],
+        images: [
+            {
+                id: 0,
+                src: "/img/product/HorizGuardPremium/HorizGuard-Premium1.png",
+
+                alt: "Vue avant du produit Horizguard Basic montrant son design compact et élégant",
+            },
+        ],
 
         listItem: [
             {
@@ -165,7 +197,7 @@ const products = [
                     "Technologies innovantes pour une ventilation et une gestion de l'humidité améliorées",
             },
         ],
-        answer: `<span class="textAcc textAccCyber">L'Horizguard Premium</span> est la solution idéale pour maximiser la <span class="textAcc textAccCyber">sécurité</span> de vos données. Conçu avec des <span class="textAcc textAccCyber">matériaux de haute qualité</span>, cet équipement offre une <span class="textAcc textAccCyber">protection avancée</span> contre les <span class="textAcc textAccCyber">cybermenaces</span>, les <span class="textAcc textAccCyber">éléments</span> extérieurs et les <span class="textAcc textAccCyber">impacts</span>. Grâce à ses <span class="textAcc textAccCyber">performances optimisées</span>, l'Horizguard Premium garantit une <span class="textAcc textAccCyber">adaptabilité</span> à divers environnements, permettant ainsi de <span class="textAcc textAccCyber">sécuriser efficacement</span> vos <span class="textAcc textAccCyber">données sensibles</span>. Choisissez l'Horizguard Premium pour une tranquillité d'esprit inégalée.`,
+        answer: `<strong class="textAcc textAccCyber">L'Horizguard Premium</strong> est la solution idéale pour maximiser la <strong class="textAcc textAccCyber">sécurité</strong> de vos données. Conçu avec des <strong class="textAcc textAccCyber">matériaux de haute qualité</strong>, cet équipement offre une <strong class="textAcc textAccCyber">protection avancée</strong> contre les <strong class="textAcc textAccCyber">cybermenaces</strong>, les <strong class="textAcc textAccCyber">éléments</strong> extérieurs et les <strong class="textAcc textAccCyber">impacts</strong>. Grâce à ses <strong class="textAcc textAccCyber">performances optimisées</strong>, l'Horizguard Premium garantit une <strong class="textAcc textAccCyber">adaptabilité</strong> à divers environnements, permettant ainsi de <strong class="textAcc textAccCyber">sécuriser efficacement</strong> vos <strong class="textAcc textAccCyber">données sensibles</strong>. Choisissez l'Horizguard Premium pour une tranquillité d'esprit inégalée.`,
         cards: [
             {
                 id: 0,

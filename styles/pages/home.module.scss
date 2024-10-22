@@ -6,14 +6,40 @@
 
 .interlude {
     width: 70vw;
-    margin: 0 auto;
+    margin: 10vh auto;
     height: 50vh;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    &Text {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+    }
+    &Title {
+        font-size: 1.5em;
+        line-height: 1.3em;
+        margin-bottom: 0.5em;
+    }
+    &Description {
+        max-width: 95%;
+        margin-bottom: 1em;
+        color: $text-grey;
+    }
+    &Image {
+        background: $bg-card;
+        width: 100%;
+        height: 95%;
+    }
+}
+
+.presContainer {
+    height: 100vh;
+    // margin: 15vh 0;
 }
 
 .pres {
-    width: 70vw;
+    width: 90vw;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -25,9 +51,12 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
-
         &Title {
+            font-size: 1.2em;
             font-weight: 500;
+        }
+        &Text {
+            color: $text-grey;
         }
     }
 }

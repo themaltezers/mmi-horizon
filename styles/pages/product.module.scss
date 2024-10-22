@@ -15,12 +15,12 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
-
+        margin: 10vh 0;
         &Text {
-            margin: 4em 0;
             display: flex;
             flex-direction: column;
             gap: 1em;
+            margin-bottom: 0.5em;
         }
     }
     &Config {

@@ -6,9 +6,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const Carousel = ({ isProduct, product }) => {
-    const [image, setImage] = useState(0);
-    const slides = carouselStore((state) => state.slides);
+    const slides = isProduct
+        ? product.images
+        : carouselStore((state) => state.slides);
     const [slideActive, setSlideActive] = useState(0);
+
     return (
         <section
             className={isProduct ? styles.carouselProduct : styles.carousel}
@@ -20,10 +22,10 @@ const Carousel = ({ isProduct, product }) => {
                         isProduct ? (
                             <li key={slide.id} className={styles.slideProduct}>
                                 <Image
-                                    src={product.images[slideActive]}
+                                    src={slide.src}
                                     width={300}
                                     height={300}
-                                    alt="test"
+                                    alt={slide.alt}
                                 />
                             </li>
                         ) : (
@@ -36,57 +38,29 @@ const Carousel = ({ isProduct, product }) => {
                                     className={`cta ${slide.ctaStyle}`}
                                     href={"#"}
                                 >
-                                    {" "}
                                     {slide.cta}
                                 </Link>
                             </li>
                         )
                     )}
             </ul>
-            {/* <div className={styles.carouselControls}>
-                <Image
-                    className="prev"
-                    src={"/icon/icon-prev-btn.svg"}
-                    width={40}
-                    height={40}
-                    alt="test"
-                    onClick={() =>
-                        slideActive != 0
-                            ? setSlideActive(slideActive - 1)
-                            : setSlideActive(3)
-                    }
-                />
-
-                <div className="slideActive"></div>
-                <Image
-                    className="next"
-                    src={"/icon/icon-next-btn.svg"}
-                    width={40}
-                    height={40}
-                    alt="test"
-                    onClick={() =>
-                        slideActive != 3
-                            ? setSlideActive(slideActive + 1)
-                            : setSlideActive(0)
-                    }
-                />
-            </div> */}
 
             {isProduct ? (
                 <div className={styles.carouselControls}>
-                    {product.images.map((image, index) => (
+                    {console.log(product.images[slideActive])}
+                    {product.images.map((image) => (
                         <Image
-                            key={index}
+                            key={image.id}
                             className={`${styles.carouselImageChange} ${
-                                index === slideActive
+                                image.id === slideActive
                                     ? styles.carouselImageChangeActive
                                     : styles.carouselImageChange
                             }`}
-                            src={image}
+                            src={image.src}
                             width={70}
                             height={70}
-                            alt="tt"
-                            onClick={() => setSlideActive(index)}
+                            alt={image.alt}
+                            onClick={() => setSlideActive(image.id)}
                         />
                     ))}
                 </div>

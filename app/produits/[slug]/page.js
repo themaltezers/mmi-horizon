@@ -26,12 +26,12 @@ const Product = ({ params }) => {
 
     return (
         <main className={styles.productPage}>
-            <Banner product={product}></Banner>
+            <Banner content={product}></Banner>
 
             <section className={styles.product}>
                 <div className={styles.productTop}>
                     <Image
-                        src={product.images[0]}
+                        src={product.images[0].src}
                         width={450}
                         height={450}
                         alt="Picture of the author"
@@ -50,9 +50,7 @@ const Product = ({ params }) => {
                             dangerouslySetInnerHTML={{
                                 __html: product.description,
                             }}
-                        >
-                            {/* {product.description} */}
-                        </p>
+                        ></p>
                         <ul className={styles.productPresList}>
                             {product.listItem.map((list) => (
                                 <li
@@ -137,35 +135,6 @@ const Product = ({ params }) => {
                     <p>Je fais mon devis</p>
                 </div>
                 <div className={styles.productChoicer}>
-                    {/* <div className={styles.productChoicerCarousel}>
-                        <div className={styles.productCarousel}>
-                            <Image
-                                src={product.images[image]}
-                                width={300}
-                                height={300}
-                                alt="test"
-                            />
-                        </div>
-                        <div className={styles.productChoicerCarouselDot}>
-                            <div
-                                className="dot"
-                                onClick={() =>
-                                    image != 0
-                                        ? setImage(image - 1)
-                                        : setImage(5)
-                                }
-                            ></div>
-                            <div className="dot"></div>
-                            <div
-                                className="dot"
-                                onClick={() =>
-                                    image != 5
-                                        ? setImage(image + 1)
-                                        : setImage(0)
-                                }
-                            ></div>
-                        </div>
-                    </div> */}
                     <Carousel isProduct={true} product={product}></Carousel>
                     <Choicer productName={product.title}></Choicer>
                 </div>

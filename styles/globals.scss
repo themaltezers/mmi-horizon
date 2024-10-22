@@ -38,6 +38,7 @@ a {
 .cta {
     padding: 10px 20px;
     border-radius: 0.5em;
+    width: fit-content;
     &Base {
     }
     &Cyber {
@@ -125,4 +126,21 @@ a {
 
 .carousel-dot.active {
     background-color: #000;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.important {
+    color: white;
+    &Web {
+        color: $p-text-hover;
+    }
+    &Cyber {
+        color: $c-text-acc;
+    }
+    &Electronics {
+        color: $e-orange-base;
+    }
 }
