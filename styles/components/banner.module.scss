@@ -1,16 +1,16 @@
 @import "../vars.scss";
 
 .banner {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        /* Overlay noir transparent */ url("/img/bg/bg-banner-home.webp")
-            center/cover;
-    width: 100vw;
+    height: 100dvh;
+    // margin-bottom: 100dvh;
+    margin-top: -10vh;
 
+    background: #444444;
+    width: 100dvw;
+    padding: 3em;
     display: grid;
-    grid-template-rows: 80% 20%;
-    justify-content: center;
     align-items: center;
+
     &Text {
         text-align: center;
         display: flex;

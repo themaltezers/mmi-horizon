@@ -1,40 +1,42 @@
-.header,
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.header {
-    padding: 0.5em 2em;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    top: 10px;
-    z-index: 1000;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(15px);
-    gap: 3em;
-    width: fit-content;
-    margin: 10px auto;
-}
-
+.menu,
 .logo {
     display: flex;
-    gap: 8px;
-    align-items: center;
-    &Title {
-        font-size: 24px;
-        font-weight: 500;
-        font-family: "Poppins";
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.01);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    height: 10vh;
+    // margin-bottom: 3vh;
+    &Content {
+        width: 70vw;
+        height: 100%;
+        margin: 0 auto;
+
+        display: grid;
+        align-items: center;
+        grid-template-columns: 20% 80%;
     }
 }
 
+.logo {
+    align-items: center;
+    gap: 8px;
+    &Title {
+        font-weight: 500;
+        font-size: 24px;
+    }
+}
 .menu {
-    gap: 60px;
-    &Item a {
-        color: white;
+    gap: 2em;
+    justify-content: end;
+    &Container {
+        width: 100%;
+    }
+    &Item {
         font-weight: 500;
     }
 }

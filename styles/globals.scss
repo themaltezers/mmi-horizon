@@ -5,6 +5,7 @@
 body {
     font-family: "Inter", sans-serif;
     background: $bg;
+    // background: black;
     color: $text-white;
     width: 100vw;
     overflow-x: hidden;
@@ -21,6 +22,7 @@ h3 {
 p {
     font-size: 16px;
     line-height: 24px;
+    // color: #8a2be2;
 }
 
 button {
@@ -36,11 +38,37 @@ a {
 .cta {
     padding: 10px 20px;
     border-radius: 0.5em;
+    width: fit-content;
+    &Base {
+    }
     &Cyber {
         background: $c-blue-base;
         &Invert {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid $c-blue-base;
+        }
+        &:hover {
+            background: $c-blue-hover;
+        }
+    }
+    &Web {
+        background: $w-purple-base;
+        &Invert {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid $w-purple-base;
+        }
+        &:hover {
+            background: $w-purple-hover;
+        }
+    }
+    &Elec {
+        background: $e-orange-base;
+        &Invert {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid $c-blue-base;
+        }
+        &:hover {
+            background: $e-orange-hover;
         }
     }
 }
@@ -56,6 +84,9 @@ a {
 .btnContainer {
     display: flex;
     gap: 1em;
+    &Mid {
+        justify-content: center;
+    }
 }
 
 .dot {
@@ -64,4 +95,52 @@ a {
     border-radius: 50%;
     background: $bg-card;
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.next,
+.prev {
+    cursor: pointer;
+}
+
+.textAcc {
+    font-weight: 500;
+    &Cyber {
+        color: $c-text-acc;
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+    background-color: #000;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.important {
+    color: white;
+    &Web {
+        color: $p-text-hover;
+    }
+    &Cyber {
+        color: $c-text-acc;
+    }
+    &Electronics {
+        color: $e-orange-base;
+    }
 }

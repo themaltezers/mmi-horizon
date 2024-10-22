@@ -104,7 +104,7 @@ const Services = () => {
                             </ul>
                             <div className={styles.productBtnContainer}>
                                 <Link className={"cta ctaCyber"} href={p.slug}>
-                                    Configurer
+                                    Voir plus
                                 </Link>
                             </div>
                         </div>

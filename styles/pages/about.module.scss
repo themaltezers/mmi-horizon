@@ -1,0 +1,17 @@
+.about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    margin: 5vh auto;
+    width: 90vw;
+    &Logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &Text {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}

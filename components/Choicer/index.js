@@ -1,74 +1,126 @@
 "use client";
 import { useState } from "react";
-import emailjs from "@emailjs/browser"; // Assurez-vous d'avoir installé emailjs
-import { choiceForm } from "./db"; // Importez vos choix de db
+import emailjs from "@emailjs/browser";
+
 import styles from "@/styles/components/choicer.module.scss";
+import formsStore from "@/stores/formStore";
 
-const Choicer = () => {
-    const [selectedChoices, setSelectedChoices] = useState([]);
-    const [userName, setUserName] = useState("");
-    const [userEmail, setUserEmail] = useState("");
+const Choicer = ({ productName }) => {
+    const [formData, setFormData] = useState({
+        userInfos: {
+            firstName: "",
+            lastName: "",
+            email: "",
+            telephone: "",
+            society: "",
+            SIRET: "",
+            message: "",
+        },
+        selectedChoices: [],
+    });
 
-    // Fonction pour gérer le changement de choix
-    const handleChoiceChange = (cId, choice) => {
-        // Vérifier si le choix est déjà sélectionné
-        const choiceIndex = selectedChoices.findIndex(
-            (selected) => selected.id === cId
-        );
+    const [invalidFields, setInvalidFields] = useState({});
+    const formLabels = formsStore((state) => state.formLabels);
+    const choiceForm = formsStore((state) => state.choiceForm);
 
-        if (choiceIndex > -1) {
-            // Si le choix est déjà sélectionné, remplacer par le nouveau choix
-            const updatedChoices = [...selectedChoices];
-            updatedChoices[choiceIndex] = {
-                id: cId,
-                selector: choice.selector,
-                price: choice.price,
-            };
-            setSelectedChoices(updatedChoices);
-        } else {
-            // Sinon, ajouter le nouveau choix
-            setSelectedChoices([
-                ...selectedChoices,
-                { id: cId, selector: choice.selector, price: choice.price },
-            ]);
-        }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            userInfos: { ...prevData.userInfos, [name]: value },
+        }));
+        // Reset invalid fields when the user starts typing
+        setInvalidFields((prev) => ({ ...prev, [name]: false }));
     };
 
-    // Fonction pour envoyer l'email
+    const handleChoiceChange = (cId, choice) => {
+        setFormData((prevData) => {
+            const isSelected = prevData.selectedChoices.some(
+                (selected) =>
+                    selected.id === cId && selected.selector === choice.selector
+            );
+
+            return {
+                ...prevData,
+                selectedChoices: isSelected
+                    ? prevData.selectedChoices.filter(
+                          (selected) =>
+                              selected.id !== cId ||
+                              selected.selector !== choice.selector
+                      )
+                    : [
+                          ...prevData.selectedChoices,
+                          {
+                              id: cId,
+                              selector: choice.selector,
+                              price: choice.price,
+                          },
+                      ],
+            };
+        });
+    };
+
+    const validateForm = () => {
+        const newInvalidFields = {};
+        const { firstName, lastName, email } = formData.userInfos;
+
+        // Vérification des champs requis
+        if (!firstName) newInvalidFields.firstName = true;
+        if (!lastName) newInvalidFields.lastName = true;
+
+        // Vérification du format de l'email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailPattern.test(email)) newInvalidFields.email = true;
+
+        // Retourne les champs invalides
+        return newInvalidFields;
+    };
+
     const sendEmail = (e) => {
         e.preventDefault();
 
-        // Créer un message à partir des choix sélectionnés
-        const choicesMessage = selectedChoices
-            .map((choice) => `${choice.selector}`)
+        const newInvalidFields = validateForm();
+
+        if (Object.keys(newInvalidFields).length > 0) {
+            setInvalidFields(newInvalidFields);
+            return; // Empêche l'envoi si les champs requis ne sont pas remplis ou invalides
+        }
+
+        const choicesMessage = formData.selectedChoices
+            .map((choice) => choice.selector)
             .join("\n");
 
-        // Préparer les paramètres à envoyer
-        const templateParams = {
-            from_name: userName,
-            from_email: userEmail,
-            message: choicesMessage,
-            to_name: "Destinataire", // Remplace par le nom du destinataire
-        };
-
-        // Envoi de l'email
         emailjs
             .send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, // Remplace par ton SERVICE_ID
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, // Remplace par ton TEMPLATE_ID
-                templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_USER_ID // Remplace par ton USER_ID
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                {
+                    ...formData.userInfos,
+                    choices: choicesMessage,
+                    productName,
+                    to_name: "Destinataire", // Remplace par le nom du destinataire
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID
             )
             .then(
-                (result) => {
-                    // console.log(result.text);
+                () => {
                     alert("Email envoyé avec succès !");
-                    setSelectedChoices([]); // Réinitialiser les choix après l'envoi
-                    setUserName(""); // Réinitialiser le nom
-                    setUserEmail(""); // Réinitialiser l'email
+                    setFormData({
+                        userInfos: {
+                            firstName: "",
+                            lastName: "",
+                            email: "",
+                            telephone: "",
+                            society: "",
+                            SIRET: "",
+                            message: "",
+                        },
+                        selectedChoices: [],
+                    });
+                    setInvalidFields({}); // Réinitialiser les erreurs après l'envoi
                 },
                 (error) => {
-                    console.log(error.text);
+                    console.error(error);
                     alert("Erreur lors de l'envoi.");
                 }
             );
@@ -90,53 +142,61 @@ const Choicer = () => {
                         {c.choice.map((choice) => (
                             <li
                                 key={choice.id}
-                                className={styles.choiceContainer}
-                                onClick={() => handleChoiceChange(c.id, choice)}
-                                style={{
-                                    cursor: "pointer",
-                                    backgroundColor: selectedChoices.find(
+                                className={
+                                    formData.selectedChoices.some(
                                         (selected) =>
                                             selected.id === c.id &&
                                             selected.selector ===
                                                 choice.selector
                                     )
-                                        ? "#0e78f9"
-                                        : "#1c1f2e", // Indiquer le choix sélectionné
-                                }}
+                                        ? `${styles.choiceContainer} ${styles.choiceContainerSelected}`
+                                        : styles.choiceContainer
+                                }
+                                onClick={() => handleChoiceChange(c.id, choice)}
                             >
                                 <p className={styles.choiceSelector}>
                                     {choice.selector}
                                 </p>
-                                {/* <p>{choice.price}</p> */}
                             </li>
                         ))}
                     </ul>
                 </div>
             ))}
 
-            {/* Champs pour le nom et l'email de l'utilisateur */}
             <div className={styles.inputContainer}>
+                {formLabels.map((label) => (
+                    <div key={label.id} className={styles.inputLab}>
+                        <label htmlFor={label.name}>{label.infos}</label>
+                        <input
+                            id={label.name}
+                            type={label.type}
+                            name={label.name}
+                            placeholder={label.placeholder}
+                            className={` ${
+                                invalidFields[label.name]
+                                    ? styles.inputError
+                                    : styles.input
+                            }`}
+                            value={formData.userInfos[label.name]}
+                            onChange={handleChange}
+                            required={label.required}
+                        />
+                    </div>
+                ))}
                 <div className={styles.inputLab}>
-                    {" "}
-                    <label>Nom</label>
-                    <input
-                        type="text"
-                        className={styles.input}
-                        value={userName}
-                        onChange={(e) => setUserName(e.target.value)}
-                        required
-                    />
-                </div>
-
-                <div className={styles.inputLab}>
-                    {" "}
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        className={styles.input}
-                        value={userEmail}
-                        onChange={(e) => setUserEmail(e.target.value)}
-                        required
+                    <label htmlFor="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Entrez votre message (200 caractères max)"
+                        className={`${styles.input} ${
+                            invalidFields.message ? styles.inputError : ""
+                        }`}
+                        value={formData.userInfos.message}
+                        onChange={handleChange}
+                        maxLength={200}
+                        rows={8}
+                        style={{ resize: "none" }}
                     />
                 </div>
             </div>

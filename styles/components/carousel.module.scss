@@ -1,0 +1,78 @@
+@import "../vars.scss";
+
+.carousel {
+    width: 90vw;
+    // background: red;
+    height: 80vh;
+
+    margin: 3dvh auto;
+    display: grid;
+    grid-template-rows: 90% 10%;
+    align-items: center;
+    &Product {
+        width: 95%;
+        height: 30vw;
+        border-radius: 24px;
+        position: sticky;
+        top: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Dot {
+            display: flex;
+            gap: 0.5em;
+        }
+    }
+
+    &Controls {
+        height: 100%;
+        display: flex;
+        // justify-content: space-between;
+        justify-content: flex-end;
+        gap: 1em;
+        align-items: center;
+        &Change {
+            width: 3dvh;
+            height: 2svh;
+            background-color: #ccc;
+
+            cursor: pointer;
+            transition: background-color 0.3s;
+            &Active {
+                background-color: #000;
+            }
+        }
+    }
+    &ImageChange {
+        border-radius: 12px;
+        padding: 0.2em;
+        background: $bg-card;
+        &Active {
+            background: $c-blue-active;
+        }
+        &:hover {
+            background: $c-blue-hover;
+        }
+    }
+}
+
+.slide {
+    height: 100%;
+    display: grid;
+    background: red;
+    align-items: end;
+    &Content {
+        padding: 2em 8vw;
+    }
+    &Text {
+        margin-bottom: 24px;
+    }
+    &Product {
+        display: flex;
+        justify-content: center;
+        background: $bg-card;
+        border-radius: 24px;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}

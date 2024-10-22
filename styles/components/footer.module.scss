@@ -1,7 +1,10 @@
-.footer {
-    display: flex;
-    align-items: center;
+@import "../vars.scss";
+
+.prefooter {
+    display: grid;
     justify-content: center;
+    align-items: center;
+    grid-template-rows: 80% 20%;
     width: 100vw;
     height: 100vh;
 }
@@ -9,4 +12,32 @@
     font-size: 6em;
     font-weight: 500;
     letter-spacing: -4px;
+    text-align: center;
+}
+
+.sublink {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(3, 1fr);
+
+    &Card {
+        padding: 2em;
+        &Cyber {
+            background: $c-blue-base;
+        }
+        &Web {
+            background: $w-purple-base;
+        }
+        &Electronics {
+            background: $e-orange-base;
+        }
+    }
+    &Name {
+        margin-bottom: 1em;
+    }
+    &List {
+        display: flex;
+        gap: 0.5em;
+        flex-direction: column;
+    }
 }

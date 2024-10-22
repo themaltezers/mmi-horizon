@@ -1,0 +1,107 @@
+@import "../vars.scss";
+
+.solution {
+    &Banner {
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        // margin-top: -10vh;
+        // margin-bottom: 10vh;
+        // background: $black;
+    }
+    &Title {
+        font-size: $title-section;
+        margin-bottom: 1em;
+    }
+    &Presentation {
+        // background: $c-blue-base;
+        border: 1px solid $c-blue-base;
+        margin-top: -10vh;
+        padding: 2em;
+        max-width: 70vw;
+        border-radius: 12px;
+        margin: 0 auto 10vh auto;
+        &Title {
+            margin-bottom: 1em;
+            font-size: $title-sub;
+            line-height: 1.3em;
+        }
+    }
+}
+
+.function {
+    width: 70vw;
+    margin: 0 auto;
+    &Title {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 1em;
+        font-size: $title-sub;
+    }
+    &List {
+        background: $bg-card;
+        padding: 2em;
+        border-radius: 1.5em;
+        transition: all 0.3s;
+        &:hover {
+            border: 1px solid $c-blue-hover;
+        }
+    }
+    &Item {
+        &Title {
+            margin-bottom: 0.5em;
+        }
+        &Content {
+            list-style: circle;
+            margin-bottom: 1em;
+            font-size: 14px;
+            line-height: 1.2em;
+            color: $text-grey;
+            &::marker {
+                color: $c-blue-base;
+            }
+        }
+    }
+}
+.functionContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-bottom: 10vh;
+}
+
+.product {
+    &Container {
+        display: flex;
+        justify-content: space-around;
+    }
+    &Card,
+    &Text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &Card {
+        padding: 4em 2em;
+        border-radius: 12px;
+        background: $bg-card;
+    }
+    &Title {
+        font-size: 22px;
+        margin-bottom: 0.5em;
+    }
+
+    &Carac {
+        margin-bottom: 2em;
+        &Item {
+            display: flex;
+            gap: 0.5em;
+            margin-bottom: 1em;
+        }
+    }
+}
