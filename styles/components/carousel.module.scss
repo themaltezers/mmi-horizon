@@ -33,13 +33,14 @@
         align-items: center;
         &Change {
             width: 3dvh;
-            height: 2svh;
-            background-color: #ccc;
-
+            height: 2dvh;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 0.3em;
             cursor: pointer;
             transition: background-color 0.3s;
             &Active {
-                background-color: #000;
+                background-color: $c-blue-active;
             }
         }
     }
@@ -59,10 +60,14 @@
 .slide {
     height: 100%;
     display: grid;
-    background: red;
+
     align-items: end;
     &Content {
         padding: 2em 8vw;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        border-radius: 12px;
     }
     &Text {
         margin-bottom: 24px;
@@ -75,4 +80,10 @@
         width: 100%;
         margin-bottom: 1em;
     }
+}
+
+.carouselBackground {
+    background: black;
+    position: absolute;
+    z-index: -1000;
 }

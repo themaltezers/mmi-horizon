@@ -15,6 +15,16 @@ const Carousel = ({ isProduct, product }) => {
         <section
             className={isProduct ? styles.carouselProduct : styles.carousel}
         >
+            {!isProduct && (
+                <Image
+                    className={styles.carouselBackground}
+                    src="/img/bg/bg-banner-home.webp"
+                    alt="test"
+                    layout="fill" // Ceci permet de remplir le conteneur
+                    objectFit="cover" // Ceci assure que l'image remplit le conteneur sans déformation
+                    quality={100} // Optionnel : ajuste la qualité d'image
+                />
+            )}
             <ul className={isProduct ? styles.slideProduct : styles.slide}>
                 {slides
                     .filter((slide) => slide.id == slideActive)
